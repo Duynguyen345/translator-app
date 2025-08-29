@@ -1,49 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8" />
-    <title>Translator of Duy Dev</title>
-    <style>
-      body {
-        font-family: Arial;
-        background: #f0f0f0;
-        text-align: center;
-        padding: 20px;
-      }
-      textarea {
-        width: 80%;
-        height: 150px;
-        margin: 10px;
-        font-size: 16px;
-      }
-      button {
-        padding: 10px 20px;
-        font-size: 16px;
-        cursor: pointer;
-      }
-      .box {
-        background: white;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-      }
-    </style>
+    <title>Duy Translator</title>
   </head>
-  <body>
-    <h1>Translator of Duy Dev</h1>
+  <body style="font-family: Arial; text-align: center; margin-top: 50px">
+    <h2>English → Vietnamese Translator</h2>
     <form method="POST">
-      <div class="box">
-        <textarea name="text" placeholder="Nhập tiếng Anh..." required>
-{{ original }}</textarea
-        ><br />
-        <button type="submit">Dịch sang Tiếng Việt</button>
-      </div>
+      <textarea
+        name="text"
+        rows="5"
+        cols="50"
+        placeholder="Enter English text here"
+      ></textarea
+      ><br /><br />
+      <button type="submit">Translate</button>
     </form>
-    {% if translated %}
-    <div class="box" style="margin-top: 20px">
-      <h3>Kết quả dịch:</h3>
-      <p>{{ translated }}</p>
-    </div>
+    {% if translated_text %}
+    <h3>Translated:</h3>
+    <p style="color: green; font-size: 18px">{{ translated_text }}</p>
     {% endif %}
   </body>
 </html>
